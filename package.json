@@ -1,0 +1,23 @@
+{
+  "name": "natours",
+  "version": "1.0.0",
+  "description": "1. Responsive design\r     - Fluid layout\r     - Media queries\r     - Responsive images\r     - Correct units\r     - Desktop-first vs mobile-first",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dfsdanimaulana/natours.git"
+  },
+  "keywords": [],
+  "author": "dfsdanimaulana <danimaulana9f@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dfsdanimaulana/natours/issues"
+  },
+  "homepage": "https://github.com/dfsdanimaulana/natours#readme",
+  "dependencies": {
+    "node-sass": "^7.0.1"
+  }
+}
