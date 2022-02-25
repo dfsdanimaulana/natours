@@ -1,10 +1,10 @@
 {
   "name": "natours",
   "version": "1.0.0",
-  "description": "1. Responsive design\r     - Fluid layout\r     - Media queries\r     - Responsive images\r     - Correct units\r     - Desktop-first vs mobile-first",
+  "description": "css and sass course from udemy",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "compile:sass":"node-sass sass/main.scss css/style.css -w"
   },
   "repository": {
     "type": "git",
