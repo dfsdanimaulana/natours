@@ -11,6 +11,9 @@
         top: 6rem;
         right: 6rem;
         z-index: 2000;
+        box-shadow: 0 1rem 3rem rgba($color-black, 0.1);
+        text-align: center;
+        cursor: pointer;
     }
     &__background {
         height: 6rem;
@@ -24,16 +27,18 @@
             $color-primary-dark
         );
         z-index: 1000;
-
-        transform: scale(80);
+        transition: transform 0.8s cubic-bezier(0.86, 0, 0.07, 1);
     }
     &__nav {
         height: 100vh;
         width: 100%;
         position: fixed;
         top: 0;
-        right: 0;
+        left: 0;
         z-index: 1500;
+        opacity: 0;
+        width: 0;
+        transition: all 0.8s cubic-bezier(0.68, -0.55, 0.27, 1.55); // https://easings.co/
     }
     &__list {
         list-style: none;
@@ -42,6 +47,7 @@
         left: 50%;
         transform: translate(-50%, -50%);
         text-align: center;
+        width: 100%;
     }
     &__item {
         margin: 1rem;
@@ -64,7 +70,7 @@
                 $color-white 50%
             );
             background-size: 250%;
-            transition: all .4s;
+            transition: all 0.4s;
 
             span {
                 margin-right: 1rem;
@@ -78,5 +84,68 @@
             color: $color-primary;
             transform: translateX(1rem);
         }
+    }
+
+    // functionality
+    &__checkbox:checked ~ &__background {
+        transform: scale(80);
+    }
+
+    &__checkbox:checked ~ &__nav {
+        opacity: 1;
+        width: 100%;
+    }
+
+    // icon
+    &__icon {
+        position: relative;
+        margin-top: 3.5rem;
+
+        &,
+        &::after,
+        &::before {
+            width: 3rem;
+            height: 2px;
+            background-color: $color-grey-dark-3;
+            display: inline-block;
+        }
+
+        &::after,
+        &::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            transition: all 0.2s;
+        }
+
+        &::before {
+            top: -0.8rem;
+            // transform-origin: right;
+        }
+
+        &::after {
+            top: 0.8rem;
+        }
+    }
+
+    &__button:hover &__icon::before {
+        top: -1rem;
+    }
+
+    &__button:hover &__icon::after {
+        top: 1rem;
+    }
+
+    &__checkbox:checked + &__button &__icon {
+        background-color: transparent;
+    }
+    &__checkbox:checked + &__button &__icon::before {
+        top: 0;
+        transform: rotate(135deg);
+    }
+
+    &__checkbox:checked + &__button &__icon::after {
+        top: 0;
+        transform: rotate(-135deg);
     }
 }
