@@ -5,7 +5,7 @@
     text-align: center;
     border-radius: 3px;
     box-shadow: 0 1.5rem 4rem rgba($color-black, 0.15);
-    transition: transform .3s;
+    transition: transform 0.3s;
 
     &__icon {
         font-size: 6rem;
@@ -17,6 +17,7 @@
             $color-primary-dark
         );
         -webkit-background-clip: text;
+        background-clip: text;
         color: transparent;
     }
 
