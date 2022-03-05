@@ -70,7 +70,6 @@
     &__link {
         &:link,
         &:visited {
-            display: inline-block;
             text-decoration: none;
             padding: 1rem 2rem;
             font-size: 3rem;
@@ -109,6 +108,10 @@
     &__checkbox:checked ~ &__nav {
         opacity: 1;
         width: 100%;
+    }
+    &__checkbox:checked ~ &__nav &__link {
+        // doing something here to remove a link
+        font-size: 3rem;
     }
 
     // icon
