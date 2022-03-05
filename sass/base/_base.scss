@@ -10,7 +10,6 @@ html {
     // This defines what 1rem is
     font-size: 62.5%; // 1rem == 10px in here,  10px/16px = 62.5%
 
-
     @include respond(tab-land) {
         // width < 1200px
         font-size: 56.25%; // 1rem should be 9px, 9/16 = 56.25%
@@ -28,4 +27,9 @@ html {
 
 body {
     box-sizing: border-box;
+    padding: 3rem;
+
+    @include respond(tab-port) {
+        padding: 0;
+    }
 }
